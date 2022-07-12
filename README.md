@@ -1,6 +1,6 @@
 # Outlook Generator
 **An automated outlook account generator utilizing selenium**
-![image](https://media.discordapp.net/attachments/995854349488103485/996241917413171250/unknown.png)
+![image](https://media.discordapp.net/attachments/995854349488103485/996307097480331294/unknown.png)
 
 ## Packages 
 All of these can be found on NuGet under the project tab in Visual Studio.
