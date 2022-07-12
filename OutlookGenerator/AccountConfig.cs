@@ -41,7 +41,7 @@ namespace OutlookGenerator
         {
             try
             {
-                var json = JsonConvert.SerializeObject(MainForm.accounts);
+                var json = JsonConvert.SerializeObject(MainForm.accounts, Formatting.Indented);
                 File.WriteAllText("accounts.json", json);
             }
             catch (Exception ex)
