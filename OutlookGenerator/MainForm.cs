@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,7 @@ namespace OutlookGenerator
         public static List<AccountModel> accounts = new List<AccountModel>();
         public MainForm()
         {
+            CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
             AccountConfig.LoadConfig();
 
@@ -30,11 +32,12 @@ namespace OutlookGenerator
         {
             for (int i = 0; i < amountNumericUpDown.Value; i++)
             {
-                SeleniumUtils.driver.SwitchTo().NewWindow(WindowType.Tab);
-                var account = SeleniumUtils.CreateOutlook();
-                accounts.Add(account);
-                accountGridView.Rows.Add(account.Email, account.Password);
-
+                new Thread(() => {
+                    SeleniumUtils.driver.SwitchTo().NewWindow(WindowType.Tab);
+                    var account = SeleniumUtils.CreateOutlook();
+                    accounts.Add(account);
+                    accountGridView.Rows.Add(account.Email, account.Password);
+                }).Start();
             }
             AccountConfig.SaveConfig();
         }
@@ -56,6 +59,14 @@ namespace OutlookGenerator
         private void openLaunchFolder_Click(object sender, EventArgs e)
         {
             Process.Start(Application.StartupPath);
+        }
+
+        private void copyButton_Click(object sender, EventArgs e)
+        {
+            if (accountGridView.SelectedCells.Count == 0) return;
+            string text = accountGridView.SelectedCells[0].Value.ToString()
+                + ":" + accountGridView.SelectedCells[1].Value.ToString();
+            Clipboard.SetText(text);
         }
     }
 }

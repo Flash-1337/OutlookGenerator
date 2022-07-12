@@ -13,7 +13,7 @@ namespace OutlookGenerator
     {
         //Newtonsoft on top
 
-        public static void LoadConfig()
+        public static List<AccountModel> LoadConfig()
         {
             try
             {
@@ -27,12 +27,14 @@ namespace OutlookGenerator
                     var json = File.ReadAllText("accounts.json");
                     var config = JsonConvert.DeserializeObject<List<AccountModel>>(json);
                     MainForm.accounts.AddRange(config);
+                    return config;
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString() + "Error occured reading accounts.json");
             }
+            return null;
         }
 
         public static void SaveConfig()
@@ -40,10 +42,7 @@ namespace OutlookGenerator
             try
             {
                 var json = JsonConvert.SerializeObject(MainForm.accounts);
-                var str = File.AppendText("accounts.json");
-
-                str.Write(json);
-                str.Dispose();
+                File.WriteAllText("accounts.json", json);
             }
             catch (Exception ex)
             {
