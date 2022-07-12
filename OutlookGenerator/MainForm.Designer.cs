@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.borderlessForm = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.topLeftLabel = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -104,7 +105,7 @@
             this.closeButton.FillColor = System.Drawing.Color.Transparent;
             this.closeButton.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.closeButton.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.closeButton.HoverState.IconColor = System.Drawing.Color.Red;
+            this.closeButton.HoverState.IconColor = System.Drawing.SystemColors.Window;
             this.closeButton.IconColor = System.Drawing.SystemColors.Window;
             this.closeButton.Location = new System.Drawing.Point(655, 0);
             this.closeButton.Name = "closeButton";
@@ -116,9 +117,12 @@
             // 
             this.accountGridView.AllowUserToAddRows = false;
             this.accountGridView.AllowUserToDeleteRows = false;
+            this.accountGridView.AllowUserToResizeColumns = false;
+            this.accountGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.accountGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.accountGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.accountGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
@@ -149,18 +153,29 @@
             this.accountGridView.EnableHeadersVisualStyles = false;
             this.accountGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.accountGridView.Location = new System.Drawing.Point(12, 41);
+            this.accountGridView.MultiSelect = false;
             this.accountGridView.Name = "accountGridView";
             this.accountGridView.ReadOnly = true;
             this.accountGridView.RowHeadersVisible = false;
+            this.accountGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.accountGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.accountGridView.RowTemplate.Height = 20;
             this.accountGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.accountGridView.ShowCellErrors = false;
+            this.accountGridView.ShowCellToolTips = false;
+            this.accountGridView.ShowEditingIcon = false;
+            this.accountGridView.ShowRowErrors = false;
             this.accountGridView.Size = new System.Drawing.Size(407, 242);
             this.accountGridView.TabIndex = 4;
-            this.accountGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.accountGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.Empty;
             this.accountGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.accountGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.accountGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.accountGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.accountGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.accountGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.accountGridView.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.accountGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.accountGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -175,7 +190,7 @@
             this.accountGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
             this.accountGridView.ThemeStyle.RowsStyle.Height = 20;
-            this.accountGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.accountGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.accountGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
             // Column1
@@ -192,8 +207,8 @@
             // 
             // amountNumericUpDown
             // 
-            this.amountNumericUpDown.BackColor = System.Drawing.Color.Transparent;
             this.amountNumericUpDown.ForeColor = System.Drawing.Color.White;
+            this.amountNumericUpDown.BackColor = System.Drawing.Color.Transparent;
             this.amountNumericUpDown.BorderThickness = 0;
             this.amountNumericUpDown.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.amountNumericUpDown.DisabledState.ForeColor = System.Drawing.Color.White;
