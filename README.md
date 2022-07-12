@@ -1,5 +1,5 @@
 # Outlook Generator
-**An automated outlook account generated utilizing selenium**
+**An automated outlook account generator utilizing selenium**
 ![image](https://media.discordapp.net/attachments/995854349488103485/996241917413171250/unknown.png)
 
 ## Packages 
