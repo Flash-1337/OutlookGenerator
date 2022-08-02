@@ -11,3 +11,8 @@ All of these can be found on NuGet under the project tab in Visual Studio.
 ## Open source
 What you CAN do:
 - Really anything as long as you abide by the license and give me credit for any code used
+
+## How to setup
+- Download the file and place it in its own folder
+- Download the chrome driver that matches your chrome installation at: chrome://version from https://chromedriver.chromium.org/downloads
+- Once downloaded place the chromedriver.exe in the same path as the account gen then run the account gen
