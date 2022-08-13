@@ -15,8 +15,8 @@ namespace OutlookGenerator
         [STAThread]
         static void Main()
         {
-            if (!File.Exists("chromedriver.exe"))
-                MessageBox.Show("Chrome driver not found please install");
+            if (!File.Exists("geckodriver.exe"))
+                MessageBox.Show("Firefox driver not found, please install it!");
 
             if (!File.Exists("accounts.json"))
                 File.Create("accounts.json");

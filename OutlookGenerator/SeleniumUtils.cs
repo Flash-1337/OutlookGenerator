@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
 namespace OutlookGenerator
 {
     public class SeleniumUtils
     {
-        public static ChromeDriver driver = new ChromeDriver();
+        public static WebDriver driver = new FirefoxDriver();
         public static WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10000));
 
         public static string getRandomString(int length = 10)
