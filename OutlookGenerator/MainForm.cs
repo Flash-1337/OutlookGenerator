@@ -33,7 +33,9 @@ namespace OutlookGenerator
             for (int i = 0; i < amountNumericUpDown.Value; i++)
             {
                 new Thread(() => {
-                    SeleniumUtils.driver.SwitchTo().NewWindow(WindowType.Tab);
+
+                   
+                    
                     var account = SeleniumUtils.CreateOutlook();
                     accounts.Add(account);
                     accountGridView.Rows.Add(account.Email, account.Password);
@@ -44,7 +46,8 @@ namespace OutlookGenerator
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            SeleniumUtils.driver.Dispose();
+            if (SeleniumUtils.driver != null)
+                SeleniumUtils.driver.Dispose();
             AccountConfig.SaveConfig();
             Environment.Exit(0);
         }
@@ -54,6 +57,13 @@ namespace OutlookGenerator
             accounts.Clear();
             AccountConfig.SaveConfig();
             accountGridView.Rows.Clear();
+        }
+
+
+        private void removeAccountButton_Click(object sender, EventArgs e)
+        {
+            if (accountGridView.SelectedRows.Count != 0)
+                accountGridView.Rows.Remove(accountGridView.SelectedRows[0]);
         }
 
         private void openLaunchFolder_Click(object sender, EventArgs e)
@@ -68,6 +78,7 @@ namespace OutlookGenerator
                 + ":" + accountGridView.SelectedCells[1].Value.ToString();
             Clipboard.SetText(text);
         }
+
     }
 }
     

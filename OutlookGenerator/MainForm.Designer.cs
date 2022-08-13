@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.borderlessForm = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.topLeftLabel = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -47,6 +47,7 @@
             this.clearButton = new Guna.UI2.WinForms.Guna2Button();
             this.openLaunchFolderButton = new Guna.UI2.WinForms.Guna2Button();
             this.copyButton = new Guna.UI2.WinForms.Guna2Button();
+            this.removeAccountButton = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).BeginInit();
@@ -58,6 +59,7 @@
             this.borderlessForm.ContainerControl = this;
             this.borderlessForm.DockIndicatorTransparencyValue = 0.6D;
             this.borderlessForm.DragStartTransparencyValue = 1D;
+            this.borderlessForm.ResizeForm = false;
             this.borderlessForm.TransparentWhileDrag = true;
             // 
             // topLeftLabel
@@ -66,9 +68,9 @@
             this.topLeftLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.topLeftLabel.Location = new System.Drawing.Point(43, 10);
             this.topLeftLabel.Name = "topLeftLabel";
-            this.topLeftLabel.Size = new System.Drawing.Size(261, 25);
+            this.topLeftLabel.Size = new System.Drawing.Size(260, 25);
             this.topLeftLabel.TabIndex = 0;
-            this.topLeftLabel.Text = "Bedrock Account Generator";
+            this.topLeftLabel.Text = "Outlook Account Generator";
             // 
             // pictureBox
             // 
@@ -119,37 +121,37 @@
             this.accountGridView.AllowUserToDeleteRows = false;
             this.accountGridView.AllowUserToResizeColumns = false;
             this.accountGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.accountGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.accountGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.accountGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.accountGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.accountGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.accountGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.accountGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.accountGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.accountGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.accountGridView.ColumnHeadersHeight = 20;
             this.accountGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.accountGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Password});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.accountGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.accountGridView.DefaultCellStyle = dataGridViewCellStyle7;
             this.accountGridView.EnableHeadersVisualStyles = false;
             this.accountGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.accountGridView.Location = new System.Drawing.Point(12, 41);
@@ -158,11 +160,11 @@
             this.accountGridView.ReadOnly = true;
             this.accountGridView.RowHeadersVisible = false;
             this.accountGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.accountGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.accountGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.accountGridView.RowTemplate.Height = 20;
             this.accountGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.accountGridView.ShowCellErrors = false;
@@ -207,13 +209,14 @@
             // 
             // amountNumericUpDown
             // 
-            this.amountNumericUpDown.ForeColor = System.Drawing.Color.White;
             this.amountNumericUpDown.BackColor = System.Drawing.Color.Transparent;
             this.amountNumericUpDown.BorderThickness = 0;
             this.amountNumericUpDown.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.amountNumericUpDown.DisabledState.ForeColor = System.Drawing.Color.White;
             this.amountNumericUpDown.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.amountNumericUpDown.FocusedState.ForeColor = System.Drawing.Color.White;
+            this.amountNumericUpDown.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.amountNumericUpDown.ForeColor = System.Drawing.Color.White;
             this.amountNumericUpDown.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.amountNumericUpDown.Location = new System.Drawing.Point(568, 41);
             this.amountNumericUpDown.Name = "amountNumericUpDown";
@@ -266,7 +269,7 @@
             this.openLaunchFolderButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.openLaunchFolderButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openLaunchFolderButton.ForeColor = System.Drawing.Color.White;
-            this.openLaunchFolderButton.Location = new System.Drawing.Point(425, 134);
+            this.openLaunchFolderButton.Location = new System.Drawing.Point(425, 185);
             this.openLaunchFolderButton.Name = "openLaunchFolderButton";
             this.openLaunchFolderButton.Size = new System.Drawing.Size(263, 45);
             this.openLaunchFolderButton.TabIndex = 8;
@@ -284,12 +287,30 @@
             this.copyButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.copyButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyButton.ForeColor = System.Drawing.Color.White;
-            this.copyButton.Location = new System.Drawing.Point(425, 185);
+            this.copyButton.Location = new System.Drawing.Point(425, 236);
             this.copyButton.Name = "copyButton";
             this.copyButton.Size = new System.Drawing.Size(263, 45);
             this.copyButton.TabIndex = 9;
             this.copyButton.Text = "Copy Selected Alt\'s Info";
             this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
+            // 
+            // removeAccountButton
+            // 
+            this.removeAccountButton.Animated = true;
+            this.removeAccountButton.BorderRadius = 3;
+            this.removeAccountButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.removeAccountButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.removeAccountButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.removeAccountButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.removeAccountButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.removeAccountButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeAccountButton.ForeColor = System.Drawing.Color.White;
+            this.removeAccountButton.Location = new System.Drawing.Point(425, 134);
+            this.removeAccountButton.Name = "removeAccountButton";
+            this.removeAccountButton.Size = new System.Drawing.Size(263, 45);
+            this.removeAccountButton.TabIndex = 10;
+            this.removeAccountButton.Text = "Remove Selected Account";
+            this.removeAccountButton.Click += new System.EventHandler(this.removeAccountButton_Click);
             // 
             // MainForm
             // 
@@ -297,6 +318,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(700, 346);
+            this.Controls.Add(this.removeAccountButton);
             this.Controls.Add(this.copyButton);
             this.Controls.Add(this.openLaunchFolderButton);
             this.Controls.Add(this.clearButton);
@@ -337,6 +359,7 @@
         private Guna.UI2.WinForms.Guna2Button openLaunchFolderButton;
         private Guna.UI2.WinForms.Guna2Button clearButton;
         private Guna.UI2.WinForms.Guna2Button copyButton;
+        private Guna.UI2.WinForms.Guna2Button removeAccountButton;
     }
 }
 

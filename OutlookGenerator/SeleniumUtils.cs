@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
 namespace OutlookGenerator
 {
     public class SeleniumUtils
     {
-        public static WebDriver driver = new FirefoxDriver();
-        public static WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10000));
+        public static bool Initialized = false;
+        public static WebDriver driver;
+        public static WebDriverWait wait;
 
         public static string getRandomString(int length = 10)
         {
@@ -33,6 +35,15 @@ namespace OutlookGenerator
             var randomString = new string(Enumerable.Repeat(chars, length)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
             return randomString;
+        }
+
+        public static void Init()
+        {
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--user-agent=Mozilla/5.0 (Windows NT 10.0; rv:100.0) Gecko/20100101 Firefox/105.0");
+            driver = new ChromeDriver(options);
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10000));
+            Initialized = true;
         }
 
 
@@ -63,6 +74,11 @@ namespace OutlookGenerator
             AccountModel creds = GenerateLogin();
             try
             {
+                if (!SeleniumUtils.Initialized)
+                    SeleniumUtils.Init();
+
+                Thread.Sleep(1000);
+                
                 driver.Navigate().GoToUrl("https://signup.live.com/signup");
 
                 SendKeysToElementById("MemberName", creds.Email);

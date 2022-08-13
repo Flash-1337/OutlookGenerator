@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,8 +16,15 @@ namespace OutlookGenerator
         [STAThread]
         static void Main()
         {
-            if (!File.Exists("geckodriver.exe"))
-                MessageBox.Show("Firefox driver not found, please install it!");
+            if (!File.Exists("chromedriver.exe")) 
+            {
+                DialogResult dialogResult = MessageBox.Show("chromedriver.exe not found, would you like to download it?", "Driver Missing", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Process.Start("https://chromedriver.chromium.org/downloads");
+                }
+                
+            }
 
             if (!File.Exists("accounts.json"))
                 File.Create("accounts.json");
