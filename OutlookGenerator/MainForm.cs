@@ -18,9 +18,16 @@ namespace OutlookGenerator
         public static List<AccountModel> accounts = new List<AccountModel>();
         public MainForm()
         {
-            CheckForIllegalCrossThreadCalls = false;
+            CheckForIllegalCrossThreadCalls = false; // 🤪
             InitializeComponent();
-            AccountConfig.LoadConfig();
+
+            foreach (var driver in DriverUtils.drivers)
+            {
+                driverComboBox.Items.Add(driver.driverFileName);
+            }
+
+
+            Config.LoadConfig();
 
             foreach (var account in accounts)
             {
@@ -33,29 +40,26 @@ namespace OutlookGenerator
             for (int i = 0; i < amountNumericUpDown.Value; i++)
             {
                 new Thread(() => {
-
-                   
-                    
                     var account = SeleniumUtils.CreateOutlook();
                     accounts.Add(account);
                     accountGridView.Rows.Add(account.Email, account.Password);
                 }).Start();
             }
-            AccountConfig.SaveConfig();
+            Config.SaveConfig();
         }
 
         private void closeButton_Click(object sender, EventArgs e)
         {
             if (SeleniumUtils.driver != null)
                 SeleniumUtils.driver.Dispose();
-            AccountConfig.SaveConfig();
+            Config.SaveConfig();
             Environment.Exit(0);
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
             accounts.Clear();
-            AccountConfig.SaveConfig();
+            Config.SaveConfig();
             accountGridView.Rows.Clear();
         }
 

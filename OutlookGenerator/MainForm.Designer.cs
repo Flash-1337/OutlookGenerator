@@ -48,6 +48,7 @@
             this.openLaunchFolderButton = new Guna.UI2.WinForms.Guna2Button();
             this.copyButton = new Guna.UI2.WinForms.Guna2Button();
             this.removeAccountButton = new Guna.UI2.WinForms.Guna2Button();
+            this.driverComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).BeginInit();
@@ -95,7 +96,7 @@
             this.generateButton.ForeColor = System.Drawing.Color.White;
             this.generateButton.Location = new System.Drawing.Point(12, 289);
             this.generateButton.Name = "generateButton";
-            this.generateButton.Size = new System.Drawing.Size(676, 45);
+            this.generateButton.Size = new System.Drawing.Size(407, 45);
             this.generateButton.TabIndex = 2;
             this.generateButton.Text = "Generate";
             this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
@@ -215,8 +216,6 @@
             this.amountNumericUpDown.DisabledState.ForeColor = System.Drawing.Color.White;
             this.amountNumericUpDown.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.amountNumericUpDown.FocusedState.ForeColor = System.Drawing.Color.White;
-            this.amountNumericUpDown.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.amountNumericUpDown.ForeColor = System.Drawing.Color.White;
             this.amountNumericUpDown.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.amountNumericUpDown.Location = new System.Drawing.Point(568, 41);
             this.amountNumericUpDown.Name = "amountNumericUpDown";
@@ -312,12 +311,30 @@
             this.removeAccountButton.Text = "Remove Selected Account";
             this.removeAccountButton.Click += new System.EventHandler(this.removeAccountButton_Click);
             // 
+            // driverComboBox
+            // 
+            this.driverComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.driverComboBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.driverComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.driverComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.driverComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.driverComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.driverComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.driverComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.driverComboBox.ForeColor = System.Drawing.Color.White;
+            this.driverComboBox.ItemHeight = 30;
+            this.driverComboBox.Location = new System.Drawing.Point(425, 289);
+            this.driverComboBox.Name = "driverComboBox";
+            this.driverComboBox.Size = new System.Drawing.Size(263, 36);
+            this.driverComboBox.TabIndex = 11;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(700, 346);
+            this.Controls.Add(this.driverComboBox);
             this.Controls.Add(this.removeAccountButton);
             this.Controls.Add(this.copyButton);
             this.Controls.Add(this.openLaunchFolderButton);
@@ -360,6 +377,7 @@
         private Guna.UI2.WinForms.Guna2Button clearButton;
         private Guna.UI2.WinForms.Guna2Button copyButton;
         private Guna.UI2.WinForms.Guna2Button removeAccountButton;
+        private Guna.UI2.WinForms.Guna2ComboBox driverComboBox;
     }
 }
 

@@ -9,30 +9,30 @@ using System.Windows.Forms;
 
 namespace OutlookGenerator
 {
-    internal class AccountConfig
+    internal class Config
     {
         //Newtonsoft on top
 
-        public static List<AccountModel> LoadConfig()
+        public static ConfigModel LoadConfig()
         {
             try
             {
-                var file = File.OpenText("accounts.json");
+                var file = File.OpenText("config.json");
                 int length = file.ReadToEnd().Count();
                 file.Dispose();
 
                 if (length != 0)
                 {
                     
-                    var json = File.ReadAllText("accounts.json");
-                    var config = JsonConvert.DeserializeObject<List<AccountModel>>(json);
-                    MainForm.accounts.AddRange(config);
+                    var json = File.ReadAllText("config.json");
+                    var config = JsonConvert.DeserializeObject<ConfigModel>(json);
+                    MainForm.accounts.AddRange(config.Accounts);
                     return config;
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString() + "Error occured reading accounts.json");
+                Console.WriteLine(ex.ToString() + "Error occured reading config.json");
             }
             return null;
         }
@@ -41,12 +41,15 @@ namespace OutlookGenerator
         {
             try
             {
-                var json = JsonConvert.SerializeObject(MainForm.accounts, Formatting.Indented);
-                File.WriteAllText("accounts.json", json);
+                var jsonObj = new ConfigModel();
+                jsonObj.Accounts = MainForm.accounts;
+                
+                var json = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
+                File.WriteAllText("config.json", json);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error occured saving accounts in accounts.json");
+                MessageBox.Show(ex.ToString(), "Error occured saving accounts in config.json");
             }
         }
     }
