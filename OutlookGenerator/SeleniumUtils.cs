@@ -78,9 +78,10 @@ namespace OutlookGenerator
 
         public static AccountModel CreateOutlook()
         {
-            AccountModel creds = GenerateLogin();
+            AccountModel creds = null;
             try
             {
+                creds = GenerateLogin();
                 if (!Initialized)
                     Init();
 

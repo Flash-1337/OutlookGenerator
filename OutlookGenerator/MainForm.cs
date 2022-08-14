@@ -39,8 +39,11 @@ namespace OutlookGenerator
             {
                 new Thread(() => {
                     var account = SeleniumUtils.CreateOutlook();
-                    accounts.Add(account);
-                    accountGridView.Rows.Add(account.Email, account.Password);
+                    if (account != null)
+                    {
+                        accounts.Add(account);
+                        accountGridView.Rows.Add(account.Email, account.Password);
+                    }
                 }).Start();
             }
             Config.SaveConfig();
