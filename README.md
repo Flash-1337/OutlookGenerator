@@ -7,6 +7,7 @@ All of these can be found on NuGet under the project tab in Visual Studio.
  - [Guna.UI2.WinForms](https://www.nuget.org/packages/Guna.UI2.WinForms/2.0.3.2?_src=template) - WinForms UI library (what makes the interface look really nice)
  - [Selenium](https://www.nuget.org/packages/Selenium.WebDriver/4.3.0?_src=template) - Let's me control a browser to automate the account creation
  - [Costura.Fody](https://www.nuget.org/packages/Costura.Fody/5.7.0?_src=template) - Packs all of these libraries into one .exe file
+ - [Bogus](https://www.nuget.org/packages/Bogus) - Allows for easy generation of fake Useragents to bypass some fingerprinting to allow for less captchas
 
 ## Open source
 What you CAN do:
