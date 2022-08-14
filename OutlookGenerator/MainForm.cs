@@ -21,10 +21,10 @@ namespace OutlookGenerator
             CheckForIllegalCrossThreadCalls = false; // 🤪
             InitializeComponent();
 
-            foreach (var driver in DriverUtils.drivers)
+           /* foreach (var driver in DriverUtils.drivers)
             {
                 driverComboBox.Items.Add(driver.driverFileName);
-            }
+            }*/
 
 
             Config.LoadConfig();

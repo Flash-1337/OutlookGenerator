@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bogus;
+using Bogus.Platform;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
@@ -16,6 +18,8 @@ namespace OutlookGenerator
         public static bool Initialized = false;
         public static WebDriver driver;
         public static WebDriverWait wait;
+
+        public static Faker faker = new Faker();
 
         public static string getRandomString(int length = 10)
         {
@@ -40,8 +44,10 @@ namespace OutlookGenerator
         public static void Init()
         {
             ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--user-agent=Mozilla/5.0 (Windows NT 10.0; rv:100.0) Gecko/20100101 Firefox/105.0");
-            driver = new ChromeDriver(options);
+            options.AddArgument("--user-agent=" + faker.Internet.UserAgent()); //Spoofs useragent to prevent them from giving you a 100 captchas
+            var chromeDriverService = ChromeDriverService.CreateDefaultService();
+            chromeDriverService.HideCommandPromptWindow = true;
+            driver = new ChromeDriver(chromeDriverService, options);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10000));
             Initialized = true;
         }
@@ -74,8 +80,8 @@ namespace OutlookGenerator
             AccountModel creds = GenerateLogin();
             try
             {
-                if (!SeleniumUtils.Initialized)
-                    SeleniumUtils.Init();
+                if (!Initialized)
+                    Init();
 
                 Thread.Sleep(1000);
                 

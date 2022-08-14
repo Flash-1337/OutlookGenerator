@@ -14,7 +14,7 @@ namespace OutlookGenerator
 {
     internal class DriverUtils
     {
-        public static string downloadUrl, driverFileName;
+       /* public static string downloadUrl, driverFileName;
         public static WebDriver webDriver;
 
 
@@ -40,6 +40,8 @@ namespace OutlookGenerator
             {
                 Process.Start(driver.driverDownload);
             }
-        }
+        }*/
+
+        //lol i will finish this one day
     }
 }

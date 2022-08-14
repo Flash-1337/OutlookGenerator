@@ -17,12 +17,12 @@ namespace OutlookGenerator
         static void Main()
         {
 
-            if (!File.Exists("config.json"))
-                File.Create("config.json");
+            if (!File.Exists("accounts.json"))
+                File.Create("accounts.json");
             else
                 Config.LoadConfig();
 
-            DriverUtils.InitDrivers();
+            //DriverUtils.InitDrivers();
 
 
 
