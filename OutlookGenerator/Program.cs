@@ -22,8 +22,6 @@ namespace OutlookGenerator
             else
                 Config.LoadConfig();
 
-            //DriverUtils.InitDrivers();
-
 
 
 

@@ -9,6 +9,7 @@ using Bogus;
 using Bogus.Platform;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
 namespace OutlookGenerator
@@ -43,11 +44,11 @@ namespace OutlookGenerator
 
         public static void Init()
         {
-            ChromeOptions options = new ChromeOptions();
+            FirefoxOptions options = new FirefoxOptions();
             options.AddArgument("--user-agent=" + faker.Internet.UserAgent()); //Spoofs useragent to prevent them from giving you a 100 captchas
-            var chromeDriverService = ChromeDriverService.CreateDefaultService();
-            chromeDriverService.HideCommandPromptWindow = true;
-            driver = new ChromeDriver(chromeDriverService, options);
+            var driverService = FirefoxDriverService.CreateDefaultService();
+            driverService.HideCommandPromptWindow = true;
+            driver = new FirefoxDriver(driverService, options);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10000));
             Initialized = true;
         }

@@ -27,8 +27,6 @@ namespace OutlookGenerator
             }*/
 
 
-            Config.LoadConfig();
-
             foreach (var account in accounts)
             {
                 accountGridView.Rows.Add(account.Email, account.Password);
