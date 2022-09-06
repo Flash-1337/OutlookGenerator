@@ -42,10 +42,12 @@ namespace OutlookGenerator
             return randomString;
         }
 
-        public static void Init()
+        public static void Init(bool spoofUserAgent)
         {
             FirefoxOptions options = new FirefoxOptions();
-            options.AddArgument("--user-agent=" + faker.Internet.UserAgent()); //Spoofs useragent to prevent them from giving you a 100 captchas
+            if (spoofUserAgent)
+                options.AddArgument("--user-agent=" + faker.Internet.UserAgent()); //Spoofs useragent to prevent them from giving you a 100 captchas
+            
             var driverService = FirefoxDriverService.CreateDefaultService();
             driverService.HideCommandPromptWindow = true;
             driver = new FirefoxDriver(driverService, options);
@@ -83,7 +85,7 @@ namespace OutlookGenerator
             {
                 creds = GenerateLogin();
                 if (!Initialized)
-                    Init();
+                    Init(true); //TODO: Add option to spoof useragent in the GUI
 
                 Thread.Sleep(1000);
                 
