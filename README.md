@@ -1,6 +1,5 @@
 # Outlook Generator
 **An automated Outlook account generator**
-![image](https://media.discordapp.net/attachments/995854349488103485/996307097480331294/unknown.png)
 
 ## Packages 
 All of these can be found on NuGet under the project tab in Visual Studio.
@@ -14,7 +13,7 @@ What you CAN do:
 - Really anything as long as you abide by the license and give me credit for any code used
 
 ## How to setup
-- Download the generator and place it in its own folder
+- Download the generator [here](https://github.com/Flash-1337/OutlookGenerator/releases) and place it in its own folder
 - Download the Firefox driver that matches your version from https://github.com/mozilla/geckodriver/releases
   - If you're not sure, download the latest one
 - Once downloaded, place the driver in the same folder as the account generator
