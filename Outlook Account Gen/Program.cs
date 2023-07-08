@@ -26,7 +26,6 @@ abstract class Program
         if (_page == null)
             return;
 
-
         await _page.MainFrame.WaitForSelectorAsync(selector);
         await _page.MainFrame.TypeAsync(selector, text);
         await _page.Keyboard.PressAsync(Key.Enter);
@@ -38,12 +37,12 @@ abstract class Program
 
         Console.WriteLine("Attempting Chromium Download");
         await browserFetcher.DownloadAsync(BrowserFetcher.DefaultChromiumRevision);
-        Console.WriteLine("Chromium Downloaded");
 
         var browser = await Puppeteer.LaunchAsync(new LaunchOptions
         {
             Headless = false
         });
+        Console.WriteLine("Chromium Downloaded");
 
         _page = await browser.NewPageAsync();
 
@@ -62,8 +61,6 @@ abstract class Program
         await _page.Keyboard.PressAsync(Key.Enter);
         await _page.Keyboard.PressAsync(Key.ArrowDown);
         
-        Thread.Sleep(1000);
-
         await _page.MainFrame.WaitForSelectorAsync("#BirthDay");
         await _page.MainFrame.ClickAsync("#BirthDay");
         await _page.Keyboard.PressAsync(Key.Enter);
@@ -78,18 +75,10 @@ abstract class Program
         await _page.MainFrame.WaitForSelectorAsync(okButton);
         await _page.MainFrame.ClickAsync(okButton);
         await _page.Keyboard.PressAsync(Key.Enter);
-
         
         Console.WriteLine("Email: " + email);
         Console.WriteLine("Password: " + password);
-        
-        
-        string yesButton = "#idSIButton9";
-        
-        await _page.MainFrame.WaitForSelectorAsync(okButton);
-        await _page.MainFrame.ClickAsync(okButton);
-        await _page.Keyboard.PressAsync(Key.Enter);
-
+        Console.ReadLine();
     }
 }
 
