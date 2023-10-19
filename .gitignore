@@ -1,3 +1,9 @@
+/.idea/
+/.vscode/
+/.vs/
+.idea/
+.vscode/
+.vs/
 bin/
 obj/
 /packages/
