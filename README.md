@@ -21,6 +21,7 @@ A C# .NET 7.0 Outlook account generator that leverages Puppeteer Sharp. This too
 
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
 - [Puppeteer Sharp](https://github.com/hardkoded/puppeteer-sharp)
+- [CapSolver](https://github.com/capsolver/capsolver-browser-extension)
 
 ## Installation
 
@@ -37,12 +38,10 @@ A C# .NET 7.0 Outlook account generator that leverages Puppeteer Sharp. This too
 4. Build the solution by right-clicking on the solution in Solution Explorer and selecting **Build Solution**.
 
 ## Usage
-
-1. Modify the `Program.cs` file to customize the account generation process according to your requirements.
-
-2. Run the application and observe the automated account generation process.
-
-3. Upon completion, the generated account details will be saved to a txt file named `accounts.txt`.
+1. Download the required extension [here](https://github.com/capsolver/capsolver-browser-extension/releases/latest)
+2. Extract archive into the same directory as the executable
+3. Run the application and observe the automated account generation process.
+4. Upon completion, the generated account details will be saved to a txt file named `accounts.txt`.
 
 ## Contributing
 
