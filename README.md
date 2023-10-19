@@ -42,7 +42,7 @@ A C# .NET 7.0 Outlook account generator that leverages Puppeteer Sharp. This too
 
 2. Run the application and observe the automated account generation process.
 
-3. Upon completion, the generated account details will be saved to a CSV file named `accounts.csv`.
+3. Upon completion, the generated account details will be saved to a txt file named `accounts.txt`.
 
 ## Contributing
 
