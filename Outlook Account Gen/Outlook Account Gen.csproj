@@ -4,9 +4,16 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>net7.0</TargetFramework>
         <RootNamespace>Outlook_Account_Gen</RootNamespace>
+        <PublishSingleFile>true</PublishSingleFile>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="CapSolver.Browser.Extension\**" />
+      <EmbeddedResource Remove="CapSolver.Browser.Extension\**" />
+      <None Remove="CapSolver.Browser.Extension\**" />
+    </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="PuppeteerSharp" Version="10.1.0" />
